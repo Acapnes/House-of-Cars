@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="w-screen h-screen flex justify-center items-center flex-col">
+
+    <!-- <header class="w-full h-[8rem] flex items-center px-10 bg-slate-600">
+        <a href="index.html" class="border-0 inline-block text-2xl">
+            <strong class="bg-white px-2 py-1 rounded-sm mr-1">Admin</strong><span>Panel</span>
+        </a>
+        <div class="w-full mx-5 flex flex-row justify-between bg-white rounded-lg items-center">
+            <input type="text" name="" id="" class="px-4 py-2 rounded-lg w-full outline-none"  placeholder="Search in Cars">
+            <button id="searchButton" class="border-l-2 w-[6rem] h-full hover:text-red-400">Search</button>
+        </div>
+        
+        <ul class="flex flex-row space-x-5 text-xl">
+            <button id="addButton"><li class="px-4 py-2 bg-yellow-300 hover:bg-green-500 rounded-lg">Add</li></button>
+            <button id="updateButton"><li class="px-4 py-2 bg-yellow-300 hover:bg-green-300 rounded-lg">Update</li></button>
+            <button id="deleteButton"><li class="px-4 py-2 bg-yellow-300 hover:bg-red-400 rounded-lg">Delete</li></button>
+            <button id="navbarButton"><li class="px-4 py-2 bg-yellow-300 hover:bg-gray-400 rounded-lg"><i class="fa fa-bars"></i></li></button>
+        </ul>
+    </header> -->
+
+    <div class="w-full h-[4rem] flex items-center p-10 px-10">
+        <header id="header" >
+            <a href="/src/index.html" class="logo"><strong>Admin</strong><span>Panel</span></a>
+            <nav>
+                <div class="w-full mx-5 flex flex-row justify-between rounded-lg items-center">
+                    <input type="text" name="" id="" class="px-4 py-2 rounded-lg w-full outline-none"  placeholder="Search in Cars">
+                    <button id="searchButton" class="border-l-2 w-[6rem] h-full hover:text-red-400 border-none">+</button>
+                </div>
+                <a href="#menu"></a>
+            </nav>
+        </header>
+    </div>
+    <nav id="menu">
+        <ul class="links">
+            <li class="active"> <a href="index.html">Home </a> </li>
+
+            <li> <a href="about-us.html">About Us</a> </li>
+
+            <li><a href="contact.html">Contact Us</a></li>
+
+            <li><a href="admin/admin-panel.html">Admin Panel</a></li>
+
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">More</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="w-full h-full flex flex-col">
+        <div class="w-full h-[24rem] border-b-2 border-black flex-row overflow-x-auto">
+            <div class="tiles">
+
+            </div>
+        </div>
+        <div class="w-full h-32 flex flex-col items-center">
+            <div class="w-full h-auto my-8 flex items-center justify-center">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+            </div>
+            <div class="w-full h-auto my-8 flex items-center justify-center">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+            </div>
+            <div class="w-full h-auto my-8 flex items-center justify-center">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+                <input type="text" class="w-full mx-4 py-2 px-4 outline-none rounded-md" placeholder="carDetails">
+            </div>
+            <ul class="flex flex-row space-x-5 text-xl">
+                <button id="addButton"><li class="px-4">Add</li></button>
+                <button id="updateButton"><li class="px-4">Update</li></button>
+                <button id="deleteButton"><li class="px-4">Delete</li></button>
+            </ul>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/Request/list.js"></script>
+</body>
+
+</html>
