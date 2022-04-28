@@ -2,6 +2,13 @@
 // Fetch data when window load
 window.addEventListener("load", fetching);
 const listBody = document.querySelector(".tiles");
+const carDetailsButton = document.querySelector("#carDetailsButton");
+
+carDetailsButton.addEventListener("click",function getDetails(e){
+    /// Detaylar butonuna basıldığında basılan butonun içinde olduğu article bölümündeki arabanın detaylarını php dosyasına postylar ve arabanın idsini getler.
+    /// daha sonra gelen idyi sessionstorage'a kaydeder ve detaylar sayfasına yönlendirilir detaylar sayfasının onloadında ise id sessionstorage'dan çekilir ve id post yapılır.
+    /// yapılan id post ile arabanın detayları get edilir ve ekrana yazdırılır.
+});
 
 function fetching() {
     fetch("https://api.coinbase.com/v2/currencies")
@@ -9,7 +16,7 @@ function fetching() {
             return response.json()
         }).then(data => {
             
-            for (i = 0; i < 6; i++) {
+            for (i = 0; i < 10; i++) {
                 const newCar = document.createElement("article");
                 const newImg = document.createElement("img");
                 const newDiv = document.createElement("div");
@@ -27,7 +34,7 @@ function fetching() {
                 newh3.appendChild(document.createTextNode("Lorem ipsum dolor sit amet, consectetur"));
 
                 ///Bg-image
-                newImg.src = "images/product-3-720x480.jpg";
+                newImg.src = "/images/about-fullscreen-1-1920x700.jpg";
                 newImg.alt="";
                 newSpan.className = "image";
                 newSpan.style.display ="none";
@@ -48,7 +55,7 @@ function fetching() {
                 newBottomP1.style.marginBottom="5.6px";
 
                 newBottomP2.textContent = "190 hp / Petrol / 2008 / Used vehicle";
-                newBottomP2.style.marginBottom="8px";
+                newBottomP2.style.marginBottom="20px";
 
 
                 ///Div
