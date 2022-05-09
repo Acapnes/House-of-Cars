@@ -25,7 +25,7 @@ function fetching() {
             return response.json()
         }).then(data => {
             // console.log(data.data);
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < 9; i++) {
                 tiles.innerHTML += `
                 <article>
                     <span class="image">
@@ -81,9 +81,6 @@ tiles.addEventListener("click", (e) => {
 
     window.location.href = "./details/car-details.html";
 })
-
-
-
 
 /*
                 <article>
