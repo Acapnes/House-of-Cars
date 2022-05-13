@@ -5,11 +5,11 @@ const carDetailsButton = document.querySelector("#carDetailsButton");
 
 const tiles = document.querySelector(".tiles");
 
-carDetailsButton.addEventListener("click", function getDetails(e) {
-    /// Detaylar butonuna basıldığında basılan butonun içinde olduğu article bölümündeki arabanın detaylarını php dosyasına postylar ve arabanın idsini getler.
-    /// daha sonra gelen idyi sessionstorage'a kaydeder ve detaylar sayfasına yönlendirilir detaylar sayfasının onloadında ise id sessionstorage'dan çekilir ve id post yapılır.
-    /// yapılan id post ile arabanın detayları get edilir ve ekrana yazdırılır.
-});
+// carDetailsButton.addEventListener("click", function getDetails(e) {
+//     /// Detaylar butonuna basıldığında basılan butonun içinde olduğu article bölümündeki arabanın detaylarını php dosyasına postylar ve arabanın idsini getler.
+//     /// daha sonra gelen idyi sessionstorage'a kaydeder ve detaylar sayfasına yönlendirilir detaylar sayfasının onloadında ise id sessionstorage'dan çekilir ve id post yapılır.
+//     /// yapılan id post ile arabanın detayları get edilir ve ekrana yazdırılır.
+// });
 
 
 
@@ -41,7 +41,7 @@ function fetching() {
                         <p><del>$11199.00</del> <strong> $11179.00</strong></p>
                         <p>190 hp / Petrol / 2008 / Used vehicle</p>
                         <div class="major-actions">
-                            <a class="button small next">View Car</a>
+                            <a class="buttonsmallnext">View Car</a>
                         </div>
                     </header>
                 </article>
@@ -54,14 +54,15 @@ function fetching() {
 // car-details.html
 
 tiles.addEventListener("click", (e) => {
+    
     const parentSelector = e.target.parentElement.parentElement;
     const childSelector = parentSelector.querySelectorAll("p")[0];
     const spanSelector = childSelector.querySelectorAll("span");
     const spanArray = [...spanSelector];
-
+    console.log(spanSelector);
     /// Values captured
     spanArray.map((index,i) => {
-        // console.log(index.innerHTML);
+        //  console.log(index.innerHTML);
 
         /// Add to localstorage
         switch(i){
@@ -79,7 +80,7 @@ tiles.addEventListener("click", (e) => {
         }
     });
 
-    window.location.href = "./details/car-details.html";
+    ///window.location.href = "./details/car-details.html";
 })
 
 /*
