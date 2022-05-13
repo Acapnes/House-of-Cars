@@ -4,7 +4,6 @@ const listBody = document.querySelector(".tiles");
 const carDetailsButton = document.querySelector("#carDetailsButton");
 
 const tiles = document.querySelector(".tiles");
-
 // carDetailsButton.addEventListener("click", function getDetails(e) {
 //     /// Detaylar butonuna basıldığında basılan butonun içinde olduğu article bölümündeki arabanın detaylarını php dosyasına postylar ve arabanın idsini getler.
 //     /// daha sonra gelen idyi sessionstorage'a kaydeder ve detaylar sayfasına yönlendirilir detaylar sayfasının onloadında ise id sessionstorage'dan çekilir ve id post yapılır.
@@ -12,19 +11,18 @@ const tiles = document.querySelector(".tiles");
 // });
 
 
-
-function loadEvents(){
+function loadEvents() {
     fetching();
 }
-function visitorCounter(){
+function visitorCounter() {
 
 }
 function fetching() {
-    fetch("https://api.coinbase.com/v2/currencies")
+    fetch("http://localhost:3000/products")
         .then(response => {
             return response.json()
         }).then(data => {
-            // console.log(data.data);
+            console.log(data);
             for (i = 0; i < 9; i++) {
                 tiles.innerHTML += `
                 <article>
@@ -33,13 +31,14 @@ function fetching() {
                     </span>
                     <header class="major">
                         <p>
-                            <i class="fa fa-dashboard"></i><span>${data.data[i]["id"]}</span>
-                            <i class="fa fa-cube"></i><span>1800cc&nbsp;&nbsp</span>
+                            <i class="fa fa-dashboard"></i><span>${data[i].id}</span>
+                            <i class="fa fa-cube"></i><span>${data[i].categoryId}</span>
                             <i class="fa fa-cog"></i><span>Manual</span>
                         </p>
-                        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p><del>$11199.00</del> <strong> $11179.00</strong></p>
-                        <p>190 hp / Petrol / 2008 / Used vehicle</p>
+                        <h3>${data[i].productName}</h3>
+                        <p><del>$11199.00</del> <strong id="carvalue">${data[i].quantityPerUnit}</strong></p>
+                        <div><span id="carType">${data[i].unitsInStock} </span> <span id="fuelType">190 hp </span><span id="wheels">190 hp </span></div>
+                        <h3 id="km">${data[i].unitsInStock}.000 km</h3>
                         <div class="major-actions">
                             <a class="buttonsmallnext">View Car</a>
                         </div>
@@ -51,55 +50,3 @@ function fetching() {
             console.err(err, "Error!");
         })
 }
-// car-details.html
-
-tiles.addEventListener("click", (e) => {
-    
-    const parentSelector = e.target.parentElement.parentElement;
-    const childSelector = parentSelector.querySelectorAll("p")[0];
-    const spanSelector = childSelector.querySelectorAll("span");
-    const spanArray = [...spanSelector];
-    console.log(spanSelector);
-    /// Values captured
-    spanArray.map((index,i) => {
-        //  console.log(index.innerHTML);
-
-        /// Add to localstorage
-        switch(i){
-            case 0:
-                window.localStorage.setItem("carId", index.innerHTML);   
-                break; 
-            case 1:
-                window.localStorage.setItem("carName", index.innerHTML);
-                break;
-            case 2:
-                window.localStorage.setItem("carAge", index.innerHTML);
-                break;
-            default:
-                alert("Wrong something in switch/case.");
-        }
-    });
-
-    ///window.location.href = "./details/car-details.html";
-})
-
-/*
-                <article>
-                    <span class="image">
-                        <img src="images/product-1-720x480.jpg" alt="" />
-                    </span>
-                    <header class="major">
-                        <p>
-                            <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> 1800cc&nbsp;&nbsp;
-                            <i class="fa fa-cog"></i> Manual
-                        </p>
-                        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p><del>$11199.00</del> <strong> $11179.00</strong></p>
-                        <p>190 hp / Petrol / 2008 / Used vehicle</p>
-                        <div class="major-actions">
-                            <a href="car-details.html" class="button small next">View Car</a>
-                        </div>
-                    </header>
-                </article>
-*/
