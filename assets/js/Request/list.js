@@ -22,7 +22,7 @@ function fetching() {
         .then(response => {
             return response.json()
         }).then(data => {
-            console.log(data);
+            // console.log(data);
             for (i = 0; i < 9; i++) {
                 tiles.innerHTML += `
                 <article>
@@ -37,7 +37,7 @@ function fetching() {
                         </p>
                         <h3>${data[i].productName}</h3>
                         <p><del>$11199.00</del> <strong id="carvalue">${data[i].quantityPerUnit}</strong></p>
-                        <div><span id="carType">${data[i].unitsInStock} </span> <span id="fuelType">190 hp </span><span id="wheels">190 hp </span></div>
+                        <div><span id="carType">${data[i].unitsInStock} </span> <span id="fuelType">Benzin </span><span id="wheels">Orta Boy</span></div>
                         <h3 id="km">${data[i].unitsInStock}.000 km</h3>
                         <div class="major-actions">
                             <a class="buttonsmallnext">View Car</a>
