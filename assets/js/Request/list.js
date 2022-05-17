@@ -25,9 +25,9 @@ function fetching() {
             // console.log(data);
             for (i = 0; i < 9; i++) {
                 tiles.innerHTML += `
-                <article>
+                <article style="background-image: url(&quot;/images/blog-${i+1}-720x480.jpg&quot;);">
                     <span class="image">
-                        <img src="" alt="" />
+                        <img src="/images/product-1-720x480.jpg" alt="">
                     </span>
                     <header class="major">
                         <p>

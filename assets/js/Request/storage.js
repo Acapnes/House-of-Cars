@@ -1,4 +1,3 @@
-window.addEventListener("load",()=> console.log("a"));
 
 document.querySelector(".tiles").addEventListener("click", (e) => {
     const parentSelector = e.target.parentElement.parentElement;
