@@ -18,27 +18,29 @@ function visitorCounter() {
 
 }
 function fetching() {
-    fetch("http://localhost:3000/products")
+    fetch("https://aad1-81-213-45-226.ngrok.io/connect_database/routes/car/read.php")
         .then(response => {
             return response.json()
         }).then(data => {
-            // console.log(data);
-            for (i = 0; i < 9; i++) {
+            console.log(data["cars"].length);
+            for (i = 0; i < data["cars"].length; i++) {
+                // Background image kodu
+                // background-image: url(&quot;/images/blog-a-720x480.jpg&quot;);
                 tiles.innerHTML += `
-                <article style="background-image: url(&quot;/images/blog-${i+1}-720x480.jpg&quot;);">
+                <article style="">
                     <span class="image">
                         <img src="/images/product-1-720x480.jpg" alt="">
                     </span>
                     <header class="major">
                         <p>
-                            <i class="fa fa-dashboard"></i><span>${data[i].id}</span>
-                            <i class="fa fa-cube"></i><span>${data[i].categoryId}</span>
-                            <i class="fa fa-cog"></i><span>Manual</span>
+                            <i class="fa fa-dashboard"></i><span>${data["cars"][i].km}km</span>
+                            <i class="fa fa-cube"></i><span>${data["cars"][i].model}</span>
+                            <i class="fa fa-cog"></i><span>${data["cars"][i].yas}</span>
                         </p>
-                        <h3>${data[i].productName}</h3>
-                        <p><del>$11199.00</del> <strong id="carvalue">${data[i].quantityPerUnit}</strong></p>
-                        <div><span id="carType">${data[i].unitsInStock} </span> <span id="fuelType">Benzin </span><span id="wheels">Orta Boy</span></div>
-                        <h3 id="km">${data[i].unitsInStock}.000 km</h3>
+                        <h3>${data["cars"][i].marka}</h3>
+                        <p><del>$11199.00</del> <strong id="carvalue">${data["cars"][i].marka}</strong></p>
+                        <div><span id="carType">a</span> <span id="fuelType">${data["cars"][i].yakit}</span><span id="wheels">Orta Boy</span></div>
+                        <h3 id="km">${data["cars"][i].km}km</h3>
                         <div class="major-actions">
                             <a class="buttonsmallnext">View Car</a>
                         </div>
