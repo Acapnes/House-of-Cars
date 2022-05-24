@@ -19,20 +19,20 @@ function visitorCounter() {
 }
 
 function fetching() {
-    fetch("http://localhost:3000/products")
+    fetch("https://11a3-176-54-255-138.ngrok.io/connect_database/routes/car/read.php")
         .then(response => {
             return response.json()
         }).then(data => {
-            //console.log(data);
-            for (i = 0; i < 4; i++) {
+            console.log(data["cars"]);
+            for (i = 0; i < data["cars"].length; i++) {
                 tiles.innerHTML += `
-                <article style="background-image: url(&quot;https://cdnepws.azureedge.net/getmedia/52a90001-4daf-4ae7-b685-2d45156e99ae/fiesta_1.png.aspx?width=768&height=432&ext=.png&quot;);">
+                <article style="background-image: url(&quot;${data["cars"].imageLink}&quot;);">
                     <span class="image">
                         <img src="" alt="">
                     </span>
                     <header class="major">
                         <p>
-                            <i class="fa fa-dashboard"></i><span>${i}km</span>
+                            <i class="fa fa-dashboard"></i><span>${data["cars"][i].kilometre}km</span>
                             <i class="fa fa-cube"></i><span>motor</span>
                             <i class="fa fa-cog"></i><span>vites</span>
                         </p>
