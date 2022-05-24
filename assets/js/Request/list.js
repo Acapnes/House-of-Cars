@@ -19,7 +19,7 @@ function visitorCounter() {
 }
 
 function fetching() {
-    fetch("https://11a3-176-54-255-138.ngrok.io/connect_database/routes/car/read.php")
+    fetch("https://example.com/connect_database/routes/car/read.php")
         .then(response => {
             return response.json()
         }).then(data => {

@@ -7,7 +7,7 @@ const password = document.querySelector("#password");
 
 const loginButton = document.querySelector("#registerButton").addEventListener("click", (e) => {
     e.preventDefault();
-    fetch(`https://11a3-176-54-255-138.ngrok.io/connect_database/routes/user/create.php?name=${uname.value}&lastName=${surname.value}&password=${password.value}&userName=${username.value}`, {
+    fetch(`https://example.com?name=${uname.value}&lastName=${surname.value}&password=${password.value}&userName=${username.value}`, {
             method: "GET",
             headers: {
                 'content-type': 'application/json'
