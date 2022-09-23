@@ -1,5 +1,5 @@
 # CarDealer
-Written by HTML CSS/Tailwindcss JavaScript PHP Full-Stack Web Development. Full-Stack Development by Acapnes.
+Written by HTML CSS/Tailwindcss JavaScript PHP Full-Stack Web Development by Acapnes.
 
 ## Home Screen
 
