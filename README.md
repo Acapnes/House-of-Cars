@@ -6,6 +6,7 @@ The Car Sales Web Application is designed to provide a seamless experience for b
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP
+- **Database:** Mariadb
 
 ## Home Screen
 
