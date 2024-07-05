@@ -8,8 +8,6 @@ const navbarButton = document.querySelector("#navbarButton");
 
 const body = document.querySelector("#body");
 
-// var carId,carName,carAge,carValue,carStyle;
-
 addButton.addEventListener("click", async (e) => {
     e.preventDefault();
     await fetch("https://e2bf-46-106-12-145.ngrok.io/connect_database/routes/car/create.php?marka=son&model=a180&fiyat=300000&yakit=dizel&modelYili=2015&kilometre=100&imageLink=sddsdsdsd", {
@@ -81,8 +79,3 @@ document.querySelector(".tiles").addEventListener("click", (e) => {
 
 
 })
-
-
-// document.querySelector(".tiles").addEventListener("click", () => {
-
-// })
