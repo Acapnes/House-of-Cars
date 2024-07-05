@@ -1,5 +1,11 @@
-# CarDealer
-Written by HTML CSS/Tailwindcss JavaScript PHP Full-Stack Web Development by Acapnes.
+# House of Cars
+
+The Car Sales Web Application is designed to provide a seamless experience for both listing cars for sale and browsing available vehicles. It includes basic functionalities for data management and transaction processing.
+
+## Technologies Used
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** PHP
 
 ## Home Screen
 
